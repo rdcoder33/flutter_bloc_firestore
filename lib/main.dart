@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_firestore/bloc/firestore_bloc.dart';
+import 'package:flutter_bloc_firestore/repository/firestore_repository.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => FirestoreBloc(),
+      create: (_) => FirestoreBloc(FirestoreRepository()),
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
