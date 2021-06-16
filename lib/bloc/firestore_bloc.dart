@@ -8,8 +8,8 @@ part 'firestore_event.dart';
 part 'firestore_state.dart';
 
 class FirestoreBloc extends Bloc<FirestoreEvent, FirestoreState> {
-  FirestoreBloc() : super(FirestoreInitial());
-  FirestoreRepository firestoreRepository = FirestoreRepository();
+  FirestoreBloc(this.firestoreRepository) : super(FirestoreInitial());
+  final FirestoreRepository firestoreRepository;
 
   @override
   Stream<FirestoreState> mapEventToState(
